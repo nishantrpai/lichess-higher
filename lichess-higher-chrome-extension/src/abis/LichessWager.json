@@ -1,0 +1,307 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oracle",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "GameCancelled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum LichessWager.GameResult",
+          "name": "result",
+          "type": "uint8"
+        }
+      ],
+      "name": "GameCompleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "player1",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "wagerAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "lichessGameId",
+          "type": "string"
+        }
+      ],
+      "name": "GameCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "player2",
+          "type": "address"
+        }
+      ],
+      "name": "PlayerJoined",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOracle",
+          "type": "address"
+        }
+      ],
+      "name": "OracleUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "cancelGame",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "lichessGameId",
+          "type": "string"
+        }
+      ],
+      "name": "createGame",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getGameDetails",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "player1",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "player2",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "wagerAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "lichessGameId",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "isCompleted",
+              "type": "bool"
+            },
+            {
+              "internalType": "enum LichessWager.GameResult",
+              "name": "result",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct LichessWager.Game",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "games",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "player1",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "player2",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "wagerAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "lichessGameId",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "isCompleted",
+          "type": "bool"
+        },
+        {
+          "internalType": "enum LichessWager.GameResult",
+          "name": "result",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "joinGame",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "gameId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "enum LichessWager.GameResult",
+          "name": "result",
+          "type": "uint8"
+        }
+      ],
+      "name": "submitGameResult",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newOracle",
+          "type": "address"
+        }
+      ],
+      "name": "updateOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+}
