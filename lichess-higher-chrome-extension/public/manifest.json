@@ -13,7 +13,8 @@
     "default_title": "Lichess Higher"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "scripting"
   ],
   "content_scripts": [
     {
@@ -28,5 +29,11 @@
   ],
   "host_permissions": [
     "https://lichess.org/"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["pageScript.js"],
+      "matches": ["https://lichess.org/*"]
+    }
   ]
 }

@@ -9,6 +9,42 @@ This project consists of two main components:
 1. **Smart Contracts** - Solidity contracts for managing wagers and verifying game results
 2. **Chrome Extension** - Browser extension that integrates with the Lichess UI to create and manage wagers
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+- MetaMask or another Web3 provider
+- Chrome or compatible browser
+
+### Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/your-username/lichess-higher.git
+cd lichess-higher
+```
+
+2. Install and build the Chrome extension:
+```
+cd lichess-higher-chrome-extension
+npm install
+npm run build
+```
+
+3. Load the extension in Chrome:
+   - Open Chrome and navigate to `chrome://extensions/`
+   - Enable "Developer mode" in the top right corner
+   - Click "Load unpacked" and select the `build` folder from the chrome-extension directory
+
+4. (Optional) Deploy the smart contracts to a test network:
+```
+cd ../lichess-higher-contracts
+npm install
+npx hardhat compile
+npx hardhat deploy --network <network-name>
+```
+
 ## Smart Contracts
 
 The smart contracts handle all the on-chain logic for creating wagers, joining games, and distributing funds based on verified results.
